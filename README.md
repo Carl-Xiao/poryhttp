@@ -23,5 +23,5 @@
 
 > 参考以下代码完成
 
-[X](https://github.com/fagongzi/manba)
-[x](https://github.com/panjf2000/goproxy)
+[https://github.com/fagongzi/manba](https://github.com/fagongzi/manba)
+[https://github.com/fagongzi/manba](https://github.com/panjf2000/goproxy)
