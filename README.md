@@ -29,6 +29,29 @@
 
 
 
+## 已完成
+
+- 代理请求
+
+```
+curl http://localhost:8081/1
+
+
+实际访问 http://localhost:8080/1
+```
+
+
+- 直接改写请求
+
+```
+curl http://localhost:8081/1
+对请求的url进行修改就可以访问制定的后台服务器
+
+curl http://localhost:9070/push/1
+```
+
+
+
 
 
 

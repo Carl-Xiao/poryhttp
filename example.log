@@ -1,0 +1,27 @@
+INFO : 2020/11/05 16:12:04.425342 proxy.go:36: 授权未通过
+INFO : 2020/11/05 16:18:11 授权未通过
+INFO : 2020/11/05 16:19:30.757958 proxy.go:36: 授权未通过
+INFO : proxy.go:36: 授权未通过
+INFO : proxy.go:28: 授权未通过
+INFO : proxy.go:54: sending request GET 127.0.0.1:8080 
+INFO : proxy.go:75: copied 11 bytes from 127.0.0.1:8080.
+INFO : proxy.go:54: sending request GET 127.0.0.1:8080 
+INFO : proxy.go:75: copied 11 bytes from 127.0.0.1:8080.
+INFO : proxy.go:54: sending request GET 127.0.0.1:8080 
+INFO : proxy.go:57: http://127.0.0.1:8080/2
+INFO : proxy.go:77: copied 11 bytes from 127.0.0.1:8080.
+INFO : proxy.go:34: /2
+INFO : proxy.go:56: sending request GET 127.0.0.1:8080 
+INFO : proxy.go:76: copied 11 bytes from 127.0.0.1:8080.
+INFO : proxy.go:34: /push/2
+INFO : proxy.go:55: sending request GET 127.0.0.1:9070 
+INFO : proxy.go:75: copied 103 bytes from 127.0.0.1:9070.
+INFO : proxy.go:34: /2
+INFO : proxy.go:55: sending request GET 127.0.0.1:9070 
+INFO : proxy.go:75: copied 103 bytes from 127.0.0.1:9070.
+INFO : proxy.go:56: sending request GET 127.0.0.1:9070 
+INFO : proxy.go:76: copied 103 bytes from 127.0.0.1:9070.
+INFO : proxy.go:54: sending request GET 127.0.0.1:9070 
+INFO : proxy.go:75: copied 3 bytes from 127.0.0.1:9070.
+INFO : proxy.go:54: sending request POST 127.0.0.1:9070 
+INFO : proxy.go:75: copied 8 bytes from 127.0.0.1:9070.

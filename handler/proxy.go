@@ -14,14 +14,6 @@ type Server struct {
 	Tr *http.Transport
 }
 
-// reverseHandler 反向代理
-func (server *Server) reverseHandler(req *http.Request) {
-	req.Host = "127.0.0.1:8080"
-	req.URL.Host = req.Host
-	req.URL.Scheme = "http"
-	logger.Infof("%v", req.RequestURI)
-}
-
 // ServeHTTP will be automatically called by system.
 // ProxyServer implements the Handler interface which need ServeHTTP.
 func (server *Server) ServeHTTP(rw http.ResponseWriter, req *http.Request) {
@@ -33,10 +25,15 @@ func (server *Server) ServeHTTP(rw http.ResponseWriter, req *http.Request) {
 	}()
 
 	if !server.Auth(rw, req) {
-		logger.Info("授权未通过")
+		rw.WriteHeader(407)
+		rw.Write(HTTP407)
 		return
 	}
-	// server.reverseHandler(req)
+	//TODO 依据token值选择后台负载均衡的方式
+	req.URL.Path = "/push" + req.URL.Path
+	server.LoadBalancing(req)
+	defer server.Done(req)
+
 	server.HTTPHandler(rw, req)
 }
 
@@ -56,7 +53,6 @@ func NewServer() *http.Server {
 func (server *Server) HTTPHandler(rw http.ResponseWriter, req *http.Request) {
 	logger.Infof("sending request %v %v \n", req.Method, req.URL.Host)
 	RmProxyHeaders(req)
-
 	resp, err := server.Tr.RoundTrip(req)
 	if err != nil {
 		logger.Errorf("%v", err)
