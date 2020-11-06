@@ -32,17 +32,16 @@ func (server *Server) ServeHTTP(rw http.ResponseWriter, req *http.Request) {
 		server.websocket(rw, req)
 		return
 	}
-
-	if !server.Auth(rw, req) {
+	path, auth := server.Auth(rw, req)
+	if !auth {
 		rw.WriteHeader(407)
 		rw.Write(HTTP407)
 		return
 	}
 
 	//TODO 依据token值选择后台负载均衡的方式
-	req.URL.Path = "/push" + req.URL.Path
+	req.URL.Path = path + req.URL.Path
 	server.LoadBalancing(req)
-	defer server.Done(req)
 
 	server.HTTPHandler(rw, req)
 }
