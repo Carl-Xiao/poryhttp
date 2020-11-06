@@ -19,9 +19,9 @@
 > curl -x http://localhost:8081 http://www.baidu.com 
 
 
-## 代做清单
+## 参考
 
-> 参考以下代码完成
+[https://github.com/fagongzi/manba](https://github.com/lafikl/liblb)
 
 [https://github.com/fagongzi/manba](https://github.com/fagongzi/manba)
 
