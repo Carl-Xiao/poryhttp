@@ -20,4 +20,14 @@ func main() {
 	logger.SetFlags(log.Lshortfile)
 	proxy := handler.NewServer()
 	logger.Fatal(proxy.ListenAndServe())
+
+	// backend := ":8888"
+	// proxy := ":8002"
+
+	// backendURL := &url.URL{Scheme: "ws://", Host: backend}
+	// p := wsutil.NewSingleHostReverseProxy(backendURL)
+
+	// go http.ListenAndServe(proxy, p)
+	// time.Sleep(100 * time.Second)
+
 }
